@@ -122,12 +122,17 @@
                     <div class="appointment-form h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn"
                         data-wow-delay="0.6s">
                         <h1 class="text-white mb-4">Sign In</h1>
+                        @if (session('status'))
+                        <div class="mb-4 font-medium text-sm text-green-600">
+                            {{ session('status') }}
+                        </div>
+                        @endif
                         <form action="{{ route('login') }}" method="POST">
                             @csrf
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-light border-0" name="text"
-                                        placeholder="Your Username" style="height: 55px;">
+                                    <input type="email" class="form-control bg-light border-0" name="email"
+                                        placeholder="Your Email" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <input type="password" class="form-control bg-light border-0" name="password"
@@ -140,8 +145,7 @@
                         </form>
                         <div class="container signin" style="color: white;">
                             <br>
-                            <p>Don't have an account? <a href="{{ route('regist') }}" style="color: #091e3ed9 ;">Sign
-                                    Up</a></p>
+                            <p>Don't have an account? <a href="{{ route('regist') }}" style="color: #091e3ed9 ;">Sign Up</a></p>
                         </div>
                     </div>
 
