@@ -78,7 +78,11 @@
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="/Home" class="navbar-brand p-0">
             <h1 class="m-0 text-primary">HealthU</h1>
-            <h2>{{ auth()->user()->username }}</h2>
+            <h2> 
+                @if( auth()->user()->role == 1)
+                {{ auth()->user()->name }}
+                @endif
+            </h2>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -270,8 +274,7 @@
         <div>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <a href="{{ route('logout') }}"
-                    onclick="event.preventDefault(); this.closest('form').submit();">
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
                     <i class="fa fa-sign-out"></i>{{ __('Logout') }}
                 </a>
             </form>
