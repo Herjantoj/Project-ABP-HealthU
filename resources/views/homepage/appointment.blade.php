@@ -89,65 +89,68 @@
     <!-- Navbar End -->
 
     <!-- Appointment Start -->
-    <div class="container-fluid bg-primary bg-appointment mb-5 wow fadeInUp" data-wow-delay="0.1s" style="margin-top: 90px;">
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-6 py-5">
-                    <div class="py-5">
-                        <h1 class="display-5 text-white mb-4">Sebelum anda membuat appointment silahkan untuk registrasi terlebi</h1>
+    <form action="" method="POST">
+        @csrf
+        <div class="container-fluid bg-primary bg-appointment mb-5 wow fadeInUp" data-wow-delay="0.1s" style="margin-top: 90px;">
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-lg-6 py-5">
+                        <div class="py-5">
+                            <h1 class="display-5 text-white mb-4">Sebelum anda membuat appointment silahkan untuk registrasi terlebih dahulu</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="appointment-form h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
-                        <h1 class="text-white mb-4">registrasi</h1>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-12 col-sm-6">
-                                    <select class="form-select bg-light border-0" style="height: 55px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 2</option>
-                                        <option value="3">Service 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <select class="form-select bg-light border-0" style="height: 55px;">
-                                        <option selected>Select Doctor</option>
-                                        <option value="1">Doctor 1</option>
-                                        <option value="2">Doctor 2</option>
-                                        <option value="3">Doctor 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control bg-light border-0 datetimepicker-input"
-                                            placeholder="Appointment Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
+                    <div class="col-lg-6">
+                        <div class="appointment-form h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
+                            <h1 class="text-white mb-4">registrasi</h1>
+                            <form>
+                                <div class="row g-3">
+                                    <!-- <div class="col-12 col-sm-6">
+                                        <select class="form-select bg-light border-0" style="height: 55px;">
+                                            <option selected>Select A Service</option>
+                                            <option value="1">Service 1</option>
+                                            <option value="2">Service 2</option>
+                                            <option value="3">Service 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <select class="form-select bg-light border-0" style="height: 55px;">
+                                            <option selected>Select Doctor</option>
+                                            <option value="1">Doctor 1</option>
+                                            <option value="2">Doctor 2</option>
+                                            <option value="3">Doctor 3</option>
+                                        </select>
+                                    </div> -->
+                                    <div class="col-12 col-sm-6">
+                                        <input type="text" class="form-control bg-light border-0" placeholder="Nama Anda" style="height: 55px;" name="name">
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <input type="email" class="form-control bg-light border-0" placeholder="Email Anda" style="height: 55px;" name="email">
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <div class="date" id="date1" data-target-input="nearest">
+                                            <input type="text"
+                                                class="form-control bg-light border-0 datetimepicker-input"
+                                                placeholder="Appointment Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;" name="date">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <div class="time" id="time1" data-target-input="nearest">
+                                            <input type="text"
+                                                class="form-control bg-light border-0 datetimepicker-input"
+                                                placeholder="Appointment Time" data-target="#time1" data-toggle="datetimepicker" style="height: 55px;" name="time">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-dark w-100 py-3" type="submit">Make Appointment</button>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="time" id="time1" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control bg-light border-0 datetimepicker-input"
-                                            placeholder="Appointment Time" data-target="#time1" data-toggle="datetimepicker" style="height: 55px;">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-dark w-100 py-3" type="submit">Make Appointment</button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
     <!-- Appointment End -->    
 
     <!-- Footer Start -->

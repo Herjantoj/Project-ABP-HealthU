@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AboutController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -26,8 +27,6 @@ Route::get('/Home', function() {
     return view('homepage.index');
 })->name('home');
 
-Route::get('/About', [AboutController::class, 'AboutPage'])->name('about');
-
 Route::get('/Contact', [AboutController::class, 'ContactPage'])->name('contact');
 
 Route::get('/Registrasi', [AboutController::class, 'RegistrasiPage'])->name('regist');
@@ -36,6 +35,8 @@ Route::get('/Appointment', [AboutController::class, 'AppointmentPage'])->name('a
 
 Route::get('/Login', [AboutController::class, 'LoginPage'])->name('homepage.login');
 
+Route::post('/Appointment', [AppointmentController::class, 'store'])->name('appointment.store');
+Route::get('/Appointment/index', [AppointmentController::class, 'index'])->name('appointment.index');
 
 Route::middleware([
     'auth:sanctum',
