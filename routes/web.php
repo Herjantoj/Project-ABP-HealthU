@@ -36,6 +36,7 @@ Route::get('/Home', function() {
 })->name('home');
 
 Route::get('/Contact', [AboutController::class, 'ContactPage'])->name('contact');
+Route::post('/feedback', [FeedbackController::class, 'feedback'])->name('feedback');
 
 Route::get('/Registrasi', [AboutController::class, 'RegistrasiPage'])->name('regist');
 
