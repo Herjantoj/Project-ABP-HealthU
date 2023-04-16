@@ -23,6 +23,14 @@ Route::get('/Coba', function () {
     return view('dashboard.index');
 });
 
+Route::get('/dashboard-1', function () {
+    return view('dashboard');
+});
+
+Route::get('/login-1', function () {
+    return view('auth.login');
+});
+
 Route::get('/Home', function() {
     return view('homepage.index');
 })->name('home');
@@ -44,6 +52,8 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('homepage.index');
+        if (auth()->user()->role == 1) {
+            return view('homepage.index');
+        }
     })->name('dashboard');
 });
