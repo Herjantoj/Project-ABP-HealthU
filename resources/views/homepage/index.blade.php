@@ -141,6 +141,11 @@
     </div>
     <!-- Carousel End -->
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/adel
 
     <!-- Banner Start -->
     <div class="container-fluid banner mb-5">
@@ -168,6 +173,10 @@
     </div>
     <!-- Banner Start -->
 
+<<<<<<< HEAD
+=======
+>>>>>>> origin/faiha
+>>>>>>> origin/adel
     <!-- About Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
@@ -231,12 +240,26 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/adel
                 <div class="col-lg-5 service-item wow zoomIn" data-wow-delay="0.9s" style="position:center">
                     <div class="rounded-top overflow-hidden">
                         <img class="img-fluid" src="img/laboratory.jpeg" width="300 px" height="200 px" alt="" >
                     </div>
                     <div class="position-relative bg-light rounded-bottom text-center p-4" style="width : 300px">
                         <h5 class="m-0">Laboratory</h5>
+<<<<<<< HEAD
+=======
+=======
+                <div class="col-lg-5 service-item wow zoomIn" data-wow-delay="0.9s">
+                    <div
+                        class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-4">
+                        <h3 class="text-white mb-3">Make Appointment</h3>
+                        <p class="text-white mb-3">We make it easy for you to make an appointment with HealthU</p>
+>>>>>>> origin/faiha
+>>>>>>> origin/adel
                     </div>
                 </div>
             </div>
