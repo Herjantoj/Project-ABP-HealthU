@@ -13,7 +13,7 @@ class AppointmentController extends Controller
         $data['appointments'] = Appointment::all();
         $data['nav_appointments'] = true;
         //gatau ini udah bener atau belum
-        return view('homepage.appointment')->withData($data);
+        return view('appointment.dataappointment', $data);
     }
     
     public function appointment(Request $request)
