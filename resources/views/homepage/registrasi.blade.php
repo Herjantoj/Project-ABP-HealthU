@@ -124,10 +124,6 @@
                                         placeholder="Your Name" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-light border-0" name="username"
-                                        placeholder="Your Username" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
                                     <input type="email" class="form-control bg-light border-0" name="email"
                                         placeholder="Your Email" style="height: 55px;">
                                 </div>

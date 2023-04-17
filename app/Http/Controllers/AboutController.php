@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class AboutController extends Controller
 {
     public function HomePage() {
-        return view('homepage.index');
+        
     }
 
     public function ContactPage() {

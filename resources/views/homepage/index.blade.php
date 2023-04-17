@@ -13,7 +13,9 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -34,7 +36,8 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary m-1" role="status">
             <span class="sr-only">Loading...</span>
         </div>
@@ -74,6 +77,11 @@
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="/Home" class="navbar-brand p-0">
             <h1 class="m-0 text-primary">HealthU</h1>
+            <h2> 
+                @if( auth()->user()->role == 1)
+                {{ auth()->user()->name }}
+                @endif
+            </h2>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -98,9 +106,12 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-3 animated slideInDown">Keep Your Body Healthy</h5>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Take care about your health with HealthU</h1>
-                            <a href="{{ route('appointment') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Appointment</a>
-                            <a href="{{ route('contact') }}" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contact Us</a>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Take care about your health with
+                                HealthU</h1>
+                            <a href="{{ route('appointment') }}"
+                                class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Appointment</a>
+                            <a href="{{ route('contact') }}"
+                                class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -109,20 +120,20 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-3 animated slideInDown">Keep Your Body Healthy</h5>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Take care about your health with HealthU</h1>
-                            <a href="appointment.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Appointment</a>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Take care about your health with
+                                HealthU</h1>
+                            <a href="appointment.html"
+                                class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Appointment</a>
                             <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contact Us</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
@@ -130,6 +141,36 @@
     </div>
     <!-- Carousel End -->
 
+<<<<<<< HEAD
+=======
+
+    <!-- Banner Start -->
+    <div class="container-fluid banner mb-5">
+        <div class="container">
+            <div class="row gx-0">
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="bg-primary d-flex flex-column p-5" style="height: 300px;">
+                        <h3 class="text-white mb-3">Opening Hours</h3>
+                        <div class="d-flex justify-content-between text-white mb-3">
+                            <h6 class="text-white mb-0">Mon - Fri</h6>
+                            <p class="mb-0"> 8:00am - 9:00pm</p>
+                        </div>
+                        <div class="d-flex justify-content-between text-white mb-3">
+                            <h6 class="text-white mb-0">Saturday</h6>
+                            <p class="mb-0"> 8:00am - 7:00pm</p>
+                        </div>
+                        <div class="d-flex justify-content-between text-white mb-3">
+                            <h6 class="text-white mb-0">Sunday</h6>
+                            <p class="mb-0"> 8:00am - 5:00pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner Start -->
+
+>>>>>>> origin/faiha
     <!-- About Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
@@ -139,12 +180,20 @@
                         <h5 class="position-relative d-inline-block text-primary text-uppercase">About Us</h5>
                         <h1 class="display-5 mb-0">HealthU</h1>
                     </div>
-                    <h4 class="text-body fst-italic mb-4">HealthU merupakan aplikasi yang membantu mahasiswa dan mahasiswi Telkom University untuk mendapatkan layanan kesehatan dari TelkoMedika.</h4>
-                    <p class="mb-4">TelkoMedika merupakan perusahaan penyedia layanan kesehatan (Healthcare Provider) yang memberikan layanan solusi kesehatan untuk masyarakat umum berupa Klinik, Laboratorium, Apotek, Optik dan Layanan Kesehatan.</p>
+                    <h4 class="text-body fst-italic mb-4">HealthU merupakan aplikasi yang membantu mahasiswa dan
+                        mahasiswi Telkom University untuk mendapatkan layanan kesehatan dari TelkoMedika.</h4>
+                    <p class="mb-4">TelkoMedika merupakan perusahaan penyedia layanan kesehatan (Healthcare Provider)
+                        yang memberikan layanan solusi kesehatan untuk masyarakat umum berupa Klinik, Laboratorium,
+                        Apotek, Optik dan Layanan Kesehatan.</p>
                 </div>
                 <div class="col-lg-5" >
                     <div class="position-relative h-100">
+<<<<<<< HEAD
                         <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="img/doktor3.jpg" >
+=======
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s"
+                            src="img/about.jpg" style="object-fit: cover;">
+>>>>>>> origin/faiha
                     </div>
                 </div>
             </div>
@@ -190,12 +239,20 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div class="col-lg-5 service-item wow zoomIn" data-wow-delay="0.9s" style="position:center">
                     <div class="rounded-top overflow-hidden">
                         <img class="img-fluid" src="img/laboratory.jpeg" width="300 px" height="200 px" alt="" >
                     </div>
                     <div class="position-relative bg-light rounded-bottom text-center p-4" style="width : 300px">
                         <h5 class="m-0">Laboratory</h5>
+=======
+                <div class="col-lg-5 service-item wow zoomIn" data-wow-delay="0.9s">
+                    <div
+                        class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-4">
+                        <h3 class="text-white mb-3">Make Appointment</h3>
+                        <p class="text-white mb-3">We make it easy for you to make an appointment with HealthU</p>
+>>>>>>> origin/faiha
                     </div>
                 </div>
             </div>
@@ -212,15 +269,24 @@
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light py-5 wow fadeInUp" data-wow-delay="0.3s" style="margin-top: -75px;">
-            <div class="row g-5 pt-4">
-                <div class="col-lg-8 col-md-7">
-                    <h3 class="text-white mb-4">Telkomedika Telkom University</h3>
-                    <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>JL. TELEKOMUNIKASI NO. 1, TERUSAN BUAH BATU, KAWASAN TELKOM UNIVERSITY BANDUNG</p>
-                    <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>cs@telkomedika.co.id</p>
-                    <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>022-287310575</p>
-                </div>
+        <div class="row g-5 pt-4">
+            <div class="col-lg-8 col-md-7">
+                <h3 class="text-white mb-4">Telkomedika Telkom University</h3>
+                <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>JL. TELEKOMUNIKASI NO. 1, TERUSAN BUAH
+                    BATU, KAWASAN TELKOM UNIVERSITY BANDUNG</p>
+                <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>cs@telkomedika.co.id</p>
+                <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>022-287310575</p>
             </div>
         </div>
+        <div>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                    <i class="fa fa-sign-out"></i>{{ __('Logout') }}
+                </a>
+            </form>
+        </div>
+    </div>
     </div>
     <!-- Footer End -->
 
