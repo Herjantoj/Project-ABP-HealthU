@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
 {
+    public function index()
+    {
+        $data['appointments_columns'] = ['No', 'Name', 'Email', 'Date', 'Time',];
+        $data['appointments'] = Appointment::all();
+        $data['nav_appointments'] = true;
+        //gatau ini udah bener atau belum
+        return view('homepage.appointment')->withData($data);
+    }
+    
     public function appointment(Request $request)
     {
         $request->validate([

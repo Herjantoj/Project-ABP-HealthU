@@ -52,9 +52,17 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         if (auth()->user()->role == 1) {
-            return view('homepage.index');
+            return view('dashboard.index');
         }
     })->name('dashboard');
 });
+
+//Appointment prefixnya apa
+Route::prefix('appointments')->group(function(){
+    Route::get('/', [AppointmentController::class, 'index'])->name('appointments');
+    Route::post('/', [AppointmentController::class, 'store'])->name('store.appointments');
+    Route::delete('/', [AppointmentController::class, 'delete'])->name('delete.appointments');
+    Route::put('/', [AppointmentController::class, 'edit'])->name('edit.appointments');
+})->middleware('admin');
 
 Route::post('/Appointment', [AppointmentController::class, 'Appointment'])->name('appointment.Appointment');

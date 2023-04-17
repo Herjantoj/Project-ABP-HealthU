@@ -143,6 +143,18 @@
                                     <button class="btn btn-dark w-100 py-3" type="submit">Make Appointment</button>
                                 </div>
                             </div>
+                            <tbody>
+                            @php $counter = 0 @endphp
+                            @foreach($data['appointments'] as $appointment)
+                                <tr>
+                                    <td>{{$$counter += 1}}</td>
+                                    <td>{{$appointment['name']}}</td>
+                                    <td>{{$appointment['email']}}</td>
+                                    <td>{{$appointment['date']}}</td>
+                                    <td>{{$appointment['time']}}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
                         </form>
                     </div>
                 </div>
