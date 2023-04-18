@@ -23,13 +23,14 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $primaryKey = 'nim';
+    protected $primaryKey = 'user_id';
     protected $fillable = [
         'nim',
         'name',
         'email',
         'role',
         'password',
+        'user_id'
     ];
     /**
      * The attributes that should be hidden for serialization.
@@ -60,4 +61,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function appointment()
+    {
+        return $this->hasOne(Appointment::class);
+    }
 }

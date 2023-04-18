@@ -9,10 +9,15 @@ class Appointment extends Model
 {
     use HasFactory;
 
+    protected $table = 'appointments';
+    //assign primary key
+    protected $primaryKey = 'appointment_id';
+
     protected $fillable = [
-        'name',
-        'email',
+        'appointment_id',
         'date',
-        'time'
+        'created_at',
+        'time',
+        'user_id'
     ];
 }

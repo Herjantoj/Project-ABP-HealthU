@@ -9,8 +9,6 @@ class AppointmentController extends Controller
 {
     public function store(Request $request){
         $validatedData = $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email',
             'date' => 'required|date',
             'time' => 'required',
         ]);
@@ -22,12 +20,9 @@ class AppointmentController extends Controller
     
         // Create a new appointment record
         Appointment::create([
-            'name' => $validatedData['name'],
-            'email' => $validatedData['email'],
+            'user_id' => auth()->user()->user_id,
             'date' => $date,
             'time' => $time,
-            'updated_at' => now(),
-            'created_at' => now()
         ]);
 
         return redirect()->route('appointment.index')->with('success', 'Appointment Berhasil Dibuat');
@@ -38,8 +33,6 @@ class AppointmentController extends Controller
         $bookings = Appointment::all();
         foreach($bookings as $booking){
             $events[] = [
-                'name' => $booking->name,
-                'email' => $booking->email,
                 'date' => $booking->date,
                 'time' => $booking->time,
             ];

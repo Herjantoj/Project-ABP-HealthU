@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
+            $table->string('user_email'); // Use string for user_email
+            $table->foreign('user_email')->references('email')->on('users'); // Set foreign key relationship to email column in users table
             $table->string('name');
-            $table->string('email');
             $table->date('date');
             $table->time('time');
             $table->timestamps();

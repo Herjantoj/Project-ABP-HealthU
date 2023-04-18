@@ -120,12 +120,12 @@
                                             <option value="3">Doctor 3</option>
                                         </select>
                                     </div> -->
-                                    <div class="col-12 col-sm-6">
+                                    <!-- <div class="col-12 col-sm-6">
                                         <input type="text" class="form-control bg-light border-0" placeholder="Nama Anda" style="height: 55px;" name="name">
                                     </div>
                                     <div class="col-12 col-sm-6">
                                         <input type="email" class="form-control bg-light border-0" placeholder="Email Anda" style="height: 55px;" name="email">
-                                    </div>
+                                    </div> -->
                                     <div class="col-12 col-sm-6">
                                         <div class="date" id="date1" data-target-input="nearest">
                                             <input type="text"
