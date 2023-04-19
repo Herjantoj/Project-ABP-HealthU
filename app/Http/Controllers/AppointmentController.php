@@ -39,4 +39,10 @@ class AppointmentController extends Controller
         };
         return view('appointment.index', ['events' => $events]);
     }
+
+    public function show(){
+        $appointment = Appointment::with(['user'])->where('user_id',auth()->user()->user_id)->latest('created_at', 'desc')->first();
+        return view('appointment.index', compact('appointment'));
+    }
+
 }

@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\AppointmentController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -46,6 +48,8 @@ Route::get('/Login', [AboutController::class, 'LoginPage'])->name('homepage.logi
 
 Route::post('/Appointment', [AppointmentController::class, 'store'])->name('appointment.store');
 Route::get('/Appointment/index', [AppointmentController::class, 'index'])->name('appointment.index');
+
+Route::get('/Appointment/show', [AppointmentController::class, 'show'])->name('appointment.show');
 
 Route::middleware([
     'auth:sanctum',

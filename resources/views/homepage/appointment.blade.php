@@ -30,6 +30,13 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
+
+    <style type="text/css">
+        .modal-box{
+            width: 600px;
+            height: 200px;
+        }
+    </style>
 </head>
 
 <body>
@@ -79,11 +86,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
+                <!-- Button trigger modal -->
+                <button class="btn btn-primary py-2 px-4 ms-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Status Appointment
+                </button>
                 <a href="/Home" class="nav-item nav-link active">Home</a>
                 <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
                 <a href="{{ route('regist') }}" class="nav-item nav-link">Sign Up</a>
             </div>
             <a href="{{ route('appointment') }}" class="btn btn-primary py-2 px-4 ms-3">Appointment</a>
+            
         </div>
     </nav>
     <!-- Navbar End -->
@@ -104,28 +116,6 @@
                             <h1 class="text-white mb-4">registrasi</h1>
                             <form>
                                 <div class="row g-3">
-                                    <!-- <div class="col-12 col-sm-6">
-                                        <select class="form-select bg-light border-0" style="height: 55px;">
-                                            <option selected>Select A Service</option>
-                                            <option value="1">Service 1</option>
-                                            <option value="2">Service 2</option>
-                                            <option value="3">Service 3</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12 col-sm-6">
-                                        <select class="form-select bg-light border-0" style="height: 55px;">
-                                            <option selected>Select Doctor</option>
-                                            <option value="1">Doctor 1</option>
-                                            <option value="2">Doctor 2</option>
-                                            <option value="3">Doctor 3</option>
-                                        </select>
-                                    </div> -->
-                                    <!-- <div class="col-12 col-sm-6">
-                                        <input type="text" class="form-control bg-light border-0" placeholder="Nama Anda" style="height: 55px;" name="name">
-                                    </div>
-                                    <div class="col-12 col-sm-6">
-                                        <input type="email" class="form-control bg-light border-0" placeholder="Email Anda" style="height: 55px;" name="email">
-                                    </div> -->
                                     <div class="col-12 col-sm-6">
                                         <div class="date" id="date1" data-target-input="nearest">
                                             <input type="text"
@@ -151,7 +141,39 @@
             </div>
         </div>
     </form>
-    <!-- Appointment End -->    
+    <!-- Appointment End -->
+
+    <!-- Modal -->
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Status Appointment Anda</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        @if(empty($appointment->date))
+            <h1>Kosong</h1>
+        @else
+            <p>Nama Pasien :
+                @if( auth()->user()->role == 1)
+                {{ auth()->user()->name }}
+                @endif
+            </p>
+            <p>Tanggal : {{ $appointment->date }}</p>
+            <p>Waktu   : {{ $appointment->time }}</p>
+        @endif
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+        </div>
+    </div>
+    </div>
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light py-5 wow fadeInUp" data-wow-delay="0.3s" style="margin-top: -75px;">
