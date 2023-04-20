@@ -78,12 +78,12 @@
         <a href="/Home" class="navbar-brand p-0">
             <h1 class="m-0 text-primary">HealthU</h1>
             <h3> 
-                @if( auth()->user()->role == 1)
+                @if(auth()->check() && auth()->user()->role == 1)
                 {{ auth()->user()->name }}
                 @endif
             </h3>
             <h5>
-                @if( auth()->user()->role == 0)
+                @if(auth()->check() && auth()->user()->role == 0)
                 <a class="btn btn-primary" href="{{ route('dokter') }}" >Admin Dashboard</a>
                 @endif
             </h5>
