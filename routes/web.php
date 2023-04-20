@@ -1,6 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\AppointmentController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -34,6 +37,7 @@ Route::get('/Home', function() {
     return view('homepage.index');
 })->name('home');
 
+
 Route::get('/dokter', [DokterController::class, 'index'])->name('dokter');
 
 Route::get('/TambahDataDokter', [DokterController::class, 'TambahDataDokter'])->name('TambahDataDokter');
@@ -59,13 +63,16 @@ Route::get('/LogoutAdmin', [AdminController::class, 'LogoutAdmin'])->name('Logou
 Route::get('/About', [AboutController::class, 'AboutPage'])->name('about');
 
 Route::get('/Contact', [AboutController::class, 'ContactPage'])->name('contact');
+Route::post('/feedback', [FeedbackController::class, 'feedback'])->name('feedback');
 
 Route::get('/Registrasi', [AboutController::class, 'RegistrasiPage'])->name('regist');
 
-Route::get('/Appointment', [AboutController::class, 'AppointmentPage'])->name('appointment');
+
 
 Route::get('/Login', [AboutController::class, 'LoginPage'])->name('homepage.login');
 
+Route::get('/Appointment', [AboutController::class, 'AppointmentPage'])->name('appointment');
+Route::post('/Appointment', [AppointmentController::class, 'store'])->name('appointment.store');
 
 Route::middleware([
     'auth:sanctum',
@@ -78,5 +85,3 @@ Route::middleware([
         }
     })->name('dashboard');
 });
-
-Route::post('/Appointment', [AppointmentController::class, 'Appointment'])->name('appointment.Appointment');

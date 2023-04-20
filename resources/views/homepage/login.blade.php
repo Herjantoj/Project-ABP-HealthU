@@ -86,7 +86,9 @@
                 <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
                 <a href="{{ route('regist') }}" class="nav-item nav-link">Sign Up</a>
             </div>
-            <a href="{{ route('appointment') }}" class="btn btn-primary py-2 px-4 ms-3">Appointment</a>
+            @if (Auth::check())
+                <a href="{{ route('appointment') }}" class="btn btn-primary py-2 px-4 ms-3">Appointment</a>
+            @endif
         </div>
     </nav>
     <!-- Navbar End -->

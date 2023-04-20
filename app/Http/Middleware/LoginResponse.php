@@ -15,7 +15,7 @@ class LoginResponse implements LoginResponseContract
         // the user can be located with Auth facade
         return $request->wantsJson()
                     ? response()->json(['two_factor' => false])
-                    : redirect()->route('homepage.index');
+                    : redirect()->route('contact');
         
     }
 
