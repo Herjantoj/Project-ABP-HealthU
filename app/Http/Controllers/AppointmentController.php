@@ -25,7 +25,7 @@ class AppointmentController extends Controller
             'time' => $time,
         ]);
 
-        return redirect()->route('appointment.index')->with('success', 'Appointment Berhasil Dibuat');
+        return redirect()->route('appointment')->with('success', 'Appointment Berhasil Dibuat');
     }
 
     public function index(){

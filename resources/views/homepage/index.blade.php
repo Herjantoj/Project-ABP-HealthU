@@ -89,6 +89,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
+                <!-- Button trigger modal -->
+                <button class="btn btn-primary py-2 px-4 ms-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Status Appointment
+                </button>
                 <a href="/Home" class="nav-item nav-link active">Home</a>
                 <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
                 <a href="{{ route('regist') }}" class="nav-item nav-link">Sign Up</a>
@@ -142,6 +146,34 @@
     </div>
     <!-- Carousel End -->
 
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Status Appointment Anda</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        @if(empty($appointment->date))
+            <h1>Kosong</h1>
+        @else
+            <p>Nama Pasien :
+                @if( auth()->user()->role == 1)
+                {{ auth()->user()->name }}
+                @endif
+            </p>
+            <p>Tanggal : {{ $appointment->date }}</p>
+            <p>Waktu   : {{ $appointment->time }}</p>
+        @endif
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a href="{{ route('appointment') }}" type="button" class="btn btn-primary">Tambah Appointment</a>
+        </div>
+        </div>
+    </div>
+    </div>
 
     <!-- Banner Start -->
     <div class="container-fluid banner mb-5">

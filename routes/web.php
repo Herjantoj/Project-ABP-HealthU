@@ -42,14 +42,12 @@ Route::post('/feedback', [FeedbackController::class, 'feedback'])->name('feedbac
 
 Route::get('/Registrasi', [AboutController::class, 'RegistrasiPage'])->name('regist');
 
-Route::get('/Appointment', [AboutController::class, 'AppointmentPage'])->name('appointment');
+
 
 Route::get('/Login', [AboutController::class, 'LoginPage'])->name('homepage.login');
 
+Route::get('/Appointment', [AboutController::class, 'AppointmentPage'])->name('appointment');
 Route::post('/Appointment', [AppointmentController::class, 'store'])->name('appointment.store');
-Route::get('/Appointment/index', [AppointmentController::class, 'index'])->name('appointment.index');
-
-Route::get('/Appointment/show', [AppointmentController::class, 'show'])->name('appointment.show');
 
 Route::middleware([
     'auth:sanctum',
@@ -62,5 +60,3 @@ Route::middleware([
         }
     })->name('dashboard');
 });
-
-Route::post('/Appointment', [AppointmentController::class, 'Appointment'])->name('appointment.Appointment');

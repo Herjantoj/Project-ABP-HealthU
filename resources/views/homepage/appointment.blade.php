@@ -108,12 +108,12 @@
                 <div class="row gx-5">
                     <div class="col-lg-6 py-5">
                         <div class="py-5">
-                            <h1 class="display-5 text-white mb-4">Sebelum anda membuat appointment silahkan untuk registrasi terlebih dahulu</h1>
+                            <h1 class="display-5 text-white mb-4">Silahkan Masukkan Tanggal dan Waktu Appointment</h1>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="appointment-form h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
-                            <h1 class="text-white mb-4">registrasi</h1>
+                            <h1 class="text-white mb-4">Appointment</h1>
                             <form>
                                 <div class="row g-3">
                                     <div class="col-12 col-sm-6">
@@ -169,7 +169,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
+            <a href="{{ route('appointment') }}" type="button" class="btn btn-primary">Tambah Appointment</a>
         </div>
         </div>
     </div>
