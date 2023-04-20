@@ -59,7 +59,10 @@ Route::get('/LogoutAdmin', [AdminController::class, 'LogoutAdmin'])->name('Logou
 Route::get('/About', [AboutController::class, 'AboutPage'])->name('about');
 
 Route::get('/Contact', [AboutController::class, 'ContactPage'])->name('contact');
+
 Route::post('/feedback', [FeedbackController::class, 'feedback'])->name('feedback');
+
+Route::get('/ShowFeedback',[FeedbackController::class, 'ShowFeedback'])->name('ShowFeedback');
 
 Route::get('/Registrasi', [AboutController::class, 'RegistrasiPage'])->name('regist');
 

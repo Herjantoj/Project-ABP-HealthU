@@ -79,6 +79,15 @@
           </li>
 
           <li class="nav-item">
+            <a href="/ShowFeedback" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Data Feedback
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="/LogoutAdmin" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>

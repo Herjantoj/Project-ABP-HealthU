@@ -11,4 +11,9 @@ class FeedbackController extends Controller
         Feedback::create($request->all());
         return redirect()->route('contact');
     }
+
+    public function ShowFeedback(Request $request){
+        $data = Feedback::all();
+        return view('feedback.ShowFeedback', compact('data'));
+    }
 }
