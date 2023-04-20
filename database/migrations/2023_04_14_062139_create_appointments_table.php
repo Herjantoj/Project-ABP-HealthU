@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->string('nim');
+        Schema::create('appointments', function (Blueprint $table) {
+            $table->id();
+            $table->string('user_email'); // Use string for user_email
+            $table->foreign('user_email')->references('email')->on('users'); // Set foreign key relationship to email column in users table
             $table->string('name');
-            $table->string('email')->unique(); // Set email as unique
-            $table->string('role');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->date('date');
+            $table->time('time');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('appointments');
     }
 };

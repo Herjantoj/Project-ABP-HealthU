@@ -9,10 +9,21 @@ class Appointment extends Model
 {
     use HasFactory;
 
+    protected $table = 'appointments';
+    //assign primary key
+    protected $primaryKey = 'appointment_id';
+
     protected $fillable = [
-        'name',
-        'email',
+        'appointment_id',
         'date',
+        'created_at',
         'time',
+        'user_id',
+        'status'
     ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'user_id', 'user_id');
+    }
 }

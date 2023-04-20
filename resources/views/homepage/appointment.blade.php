@@ -30,6 +30,13 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
+
+    <style type="text/css">
+        .modal-box{
+            width: 600px;
+            height: 200px;
+        }
+    </style>
 </head>
 
 <body>
@@ -79,76 +86,96 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
+                <!-- Button trigger modal -->
+                <button class="btn btn-primary py-2 px-4 ms-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Status Appointment
+                </button>
                 <a href="/Home" class="nav-item nav-link active">Home</a>
                 <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
                 <a href="{{ route('regist') }}" class="nav-item nav-link">Sign Up</a>
             </div>
             <a href="{{ route('appointment') }}" class="btn btn-primary py-2 px-4 ms-3">Appointment</a>
+            
         </div>
     </nav>
     <!-- Navbar End -->
 
     <!-- Appointment Start -->
-    <div class="container-fluid bg-primary py-5 hero-header mb-5">
-        <div class="row py-3">
-            <div class="col-12 text-center">
-                <h1 class="display-3 text-white animated zoomIn">Appointment</h1>
-                <a href="" class="h4 text-white">Home</a>
-                <i class="far fa-circle text-white px-2"></i>
-                <a href="" class="h4 text-white">Appointment</a>
+    <form action="" method="POST">
+        @csrf
+        <div class="container-fluid bg-primary bg-appointment mb-5 wow fadeInUp" data-wow-delay="0.1s" style="margin-top: 90px;">
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-lg-6 py-5">
+                        <div class="py-5">
+                            <h1 class="display-5 text-white mb-4">Silahkan Masukkan Tanggal dan Waktu Appointment</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="appointment-form h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
+                            <h1 class="text-white mb-4">Appointment</h1>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-12 col-sm-6">
+                                        <div class="date" id="date1" data-target-input="nearest">
+                                            <input type="text"
+                                                class="form-control bg-light border-0 datetimepicker-input"
+                                                placeholder="Appointment Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;" name="date">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <div class="time" id="time1" data-target-input="nearest">
+                                            <input type="text"
+                                                class="form-control bg-light border-0 datetimepicker-input"
+                                                placeholder="Appointment Time" data-target="#time1" data-toggle="datetimepicker" style="height: 55px;" name="time">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-dark w-100 py-3" type="submit">Make Appointment</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </form>
+    <!-- Appointment End -->
 
-        <!-- White Space Start -->
-        <br>
-        <br>
-        <!-- White Space End -->
+    <!-- Modal -->
+    
 
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-6 py-5">
-                    <div class="py-5">
-                        <h1 class="display-5 text-white mb-4">Let's Make an Appointment With The Doctor</h1>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="appointment-form h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
-                        <h1 class="text-white mb-4">Appointment Submission</h1>
-                        <form method="post" action="{{route('appointment.Appointment')}}">
-                        @csrf    
-                        <div class="row g-3">
-                                <div class="col-12 col-sm-6">
-                                    <input name="appointment_name" type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input name="appointment_email" type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input name="appointment_date" type="text"
-                                            class="form-control bg-light border-0 datetimepicker-input"
-                                            placeholder="Appointment Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="time" id="time1" data-target-input="nearest">
-                                        <input name="appointment_time" type="text"
-                                            class="form-control bg-light border-0 datetimepicker-input"
-                                            placeholder="Appointment Time" data-target="#time1" data-toggle="datetimepicker" style="height: 55px;">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <br>
-                                    <button class="btn btn-dark w-100 py-3" type="submit">Submit Appointment</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Status Appointment Anda</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        @if(empty($appointment->date))
+            <h1>Kosong</h1>
+        @else
+            <p>Nama Pasien :
+                @if( auth()->user()->role == 1)
+                {{ auth()->user()->name }}
+                @endif
+            </p>
+            <p>Tanggal : {{ $appointment->date }}</p>
+            <p>Waktu   : {{ $appointment->time }}</p>
+        @endif
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a href="{{ route('appointment') }}" type="button" class="btn btn-primary">Tambah Appointment</a>
+        </div>
         </div>
     </div>
-    <!-- Appointment End --> 
+    </div>
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light py-5 wow fadeInUp" data-wow-delay="0.3s" style="margin-top: -75px;">
