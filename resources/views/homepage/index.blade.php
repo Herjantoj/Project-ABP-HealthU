@@ -55,8 +55,7 @@
         <div class="row gx-0">
             <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
-                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Opening Hours: Mon - Tues : 6.00
-                        am - 10.00 pm, Sunday Closed </small>
+                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Opening Hours: Monday - Friday : 7.00 am - 7.00 pm, Saturday - Sunday : 8.00 am - 2.00 pm </small>
                 </div>
             </div>
             <div class="col-md-6 text-center text-lg-end">
@@ -65,7 +64,7 @@
                         <p class="m-0"><i class="fa fa-envelope-open me-2"></i>cs@telkomedika.co.id</p>
                     </div>
                     <div class="py-2">
-                        <p class="m-0"><i class="fa fa-phone-alt me-2"></i>1500115</p>
+                        <p class="m-0"><i class="fa fa-phone-alt me-2"></i>022-287310575</p>
                     </div>
                 </div>
             </div>
@@ -78,11 +77,16 @@
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="/Home" class="navbar-brand p-0">
             <h1 class="m-0 text-primary">HealthU</h1>
-            <h2> 
+            <h3> 
                 @if( auth()->user()->role == 1)
                 {{ auth()->user()->name }}
                 @endif
-            </h2>
+            </h3>
+            <h5>
+                @if( auth()->user()->role == 0)
+                <a class="btn btn-primary" href="{{ route('dokter') }}" >Admin Dashboard</a>
+                @endif
+            </h5>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -216,7 +220,7 @@
                         yang memberikan layanan solusi kesehatan untuk masyarakat umum berupa Klinik, Laboratorium,
                         Apotek, Optik dan Layanan Kesehatan.</p>
                 </div>
-                <div class="col-lg-5" style="min-height: 500px;">
+                <div class="col-lg-5" >
                     <div class="position-relative h-100">
                         <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s"
                             src="img/about.jpg" style="object-fit: cover;">
@@ -228,8 +232,8 @@
     <!-- About End -->
 
     <!-- Service Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" >
+        <div class="container" >
             <div class="row g-5 mb-5">
                 <div class="col-lg-5 wow zoomIn" data-wow-delay="0.3s">
                     <img class="img-fluid" src="img/ilustrasi-dokter.jpeg" alt="">
@@ -240,42 +244,27 @@
                         <h1 class="display-5 mb-0">TelkoMedika Services</h1>
                     </div>
                     <div class="row g-5">
-                        <div class="col-md-6 service-item wow zoomIn" data-wow-delay="0.6s">
-                            <div class="rounded-top overflow-hidden">
-                                <img class="img-fluid" src="img/rsz_rawat-inap.png" alt="">
-                            </div>
-                            <div class="position-relative bg-light rounded-bottom text-center p-4">
-                                <h5 class="m-0">Rawat Inap</h5>
-                            </div>
-                        </div>
-                        <div class="col-md-6 service-item wow zoomIn" data-wow-delay="0.9s">
-                            <div class="rounded-top overflow-hidden">
-                                <img class="img-fluid" src="img/rsz_pharmacy.png" alt="">
-                            </div>
-                            <div class="position-relative bg-light rounded-bottom text-center p-4">
-                                <h5 class="m-0">Apotek</h5>
-                            </div>
-                        </div>
+                        <div class="col-md-6 service-item wow zoomIn" data-wow-delay="0.9s"></div>
                     </div>
                 </div>
             </div>
-            <div class="row g-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row g-7 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-7">
                     <div class="row g-5">
-                        <div class="col-md-6 service-item wow zoomIn" data-wow-delay="0.3s">
+                        <div class="col-md-6 service-item wow zoomIn" data-wow-delay="0.6s">
                             <div class="rounded-top overflow-hidden">
-                                <img class="img-fluid" src="img/rsz_clinic.png" alt="">
+                                <img class="img-fluid" src="img/clinic.jpeg" width="300 px" height="200 px" alt="">
                             </div>
-                            <div class="position-relative bg-light rounded-bottom text-center p-4">
+                            <div class="position-relative bg-light rounded-bottom text-center p-4" style="width : 300px">
                                 <h5 class="m-0">Klinik</h5>
                             </div>
                         </div>
                         <div class="col-md-6 service-item wow zoomIn" data-wow-delay="0.6s">
                             <div class="rounded-top overflow-hidden">
-                                <img class="img-fluid" src="img/rsz_test.png" alt="">
+                                <img class="img-fluid" src="img/pharmacy.jpeg" width="300 px" height="200 px" alt="">
                             </div>
-                            <div class="position-relative bg-light rounded-bottom text-center p-4">
-                                <h5 class="m-0">Laboratorium</h5>
+                            <div class="position-relative bg-light rounded-bottom text-center p-4" style="width : 300px">
+                                <h5 class="m-0">Apotek</h5>
                             </div>
                         </div>
                     </div>
@@ -292,9 +281,16 @@
     </div>
     <!-- Service End -->
 
+    <!-- Whitespace -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Whitespace End -->
+
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light py-5 wow fadeInUp" data-wow-delay="0.3s" style="margin-top: -75px;">
-        <div class="row g-5 pt-4">
+        <div class="row g-5 pt-4 mb-3">
             <div class="col-lg-8 col-md-7">
                 <h3 class="text-white mb-4">Telkomedika Telkom University</h3>
                 <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>JL. TELEKOMUNIKASI NO. 1, TERUSAN BUAH
@@ -306,9 +302,9 @@
         <div>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                <button class="btn btn-primary w-50 py-3" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
                     <i class="fa fa-sign-out"></i>{{ __('Logout') }}
-                </a>
+                </button>
             </form>
         </div>
     </div>

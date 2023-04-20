@@ -55,17 +55,16 @@
         <div class="row gx-0">
             <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
-                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Opening Hours: Mon - Tues : 6.00
-                        am - 10.00 pm, Sunday Closed </small>
+                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Opening Hours: Monday - Friday : 7.00 am - 7.00 pm, Saturday - Sunday : 8.00 am - 2.00 pm</small>
                 </div>
             </div>
             <div class="col-md-6 text-center text-lg-end">
                 <div class="position-relative d-inline-flex align-items-center bg-primary text-white top-shape px-5">
                     <div class="me-3 pe-3 border-end py-2">
-                        <p class="m-0"><i class="fa fa-envelope-open me-2"></i>info@example.com</p>
+                        <p class="m-0"><i class="fa fa-envelope-open me-2"></i>cs@telkomedika.co.id</p>
                     </div>
                     <div class="py-2">
-                        <p class="m-0"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</p>
+                        <p class="m-0"><i class="fa fa-phone-alt me-2"></i>022-287310575</p>
                     </div>
                 </div>
             </div>
@@ -148,6 +147,7 @@
                         <div class="container signin" style="color: white;">
                             <br>
                             <p>Don't have an account? <a href="{{ route('regist') }}" style="color: #091e3ed9 ;">Sign Up</a></p>
+                            <p>Or Sign In as an Admin? <a href="{{ route('LoginAdmin') }}" style="color: #091e3ed9 ;">Sign In Admin</a></p>
                         </div>
                     </div>
 
@@ -162,16 +162,15 @@
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light py-5 wow fadeInUp" data-wow-delay="0.3s" style="margin-top: -75px;">
-        <div class="row g-5 pt-4">
-            <div class="col-lg-8 col-md-7">
-                <h3 class="text-white mb-4">Telkomedika Telkom University</h3>
-                <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>JL. TELEKOMUNIKASI NO. 1, TERUSAN BUAH
-                    BATU, KAWASAN TELKOM UNIVERSITY BANDUNG</p>
-                <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>cs@telkomedika.co.id</p>
-                <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>022-287310575</p>
+            <div class="row g-5 pt-4">
+                <div class="col-lg-8 col-md-7">
+                    <h3 class="text-white mb-4">Telkomedika Telkom University</h3>
+                    <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>JL. TELEKOMUNIKASI NO. 1, TERUSAN BUAH BATU, KAWASAN TELKOM UNIVERSITY BANDUNG</p>
+                    <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>cs@telkomedika.co.id</p>
+                    <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>022-287310575</p>
+                </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- Footer End -->
 
