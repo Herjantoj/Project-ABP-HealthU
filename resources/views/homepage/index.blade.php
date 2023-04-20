@@ -77,11 +77,16 @@
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="/Home" class="navbar-brand p-0">
             <h1 class="m-0 text-primary">HealthU</h1>
-            <h2> 
+            <h3> 
                 @if( auth()->user()->role == 1)
                 {{ auth()->user()->name }}
                 @endif
-            </h2>
+            </h3>
+            <h5>
+                @if( auth()->user()->role == 0)
+                <a class="btn btn-primary" href="{{ route('dokter') }}" >Admin Dashboard</a>
+                @endif
+            </h5>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -141,8 +146,6 @@
     </div>
     <!-- Carousel End -->
 
-<<<<<<< HEAD
-=======
 
     <!-- Banner Start -->
     <div class="container-fluid banner mb-5">
@@ -170,7 +173,6 @@
     </div>
     <!-- Banner Start -->
 
->>>>>>> origin/faiha
     <!-- About Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
@@ -188,12 +190,8 @@
                 </div>
                 <div class="col-lg-5" >
                     <div class="position-relative h-100">
-<<<<<<< HEAD
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="img/doktor3.jpg" >
-=======
                         <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s"
                             src="img/about.jpg" style="object-fit: cover;">
->>>>>>> origin/faiha
                     </div>
                 </div>
             </div>
@@ -239,20 +237,11 @@
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
-                <div class="col-lg-5 service-item wow zoomIn" data-wow-delay="0.9s" style="position:center">
-                    <div class="rounded-top overflow-hidden">
-                        <img class="img-fluid" src="img/laboratory.jpeg" width="300 px" height="200 px" alt="" >
-                    </div>
-                    <div class="position-relative bg-light rounded-bottom text-center p-4" style="width : 300px">
-                        <h5 class="m-0">Laboratory</h5>
-=======
                 <div class="col-lg-5 service-item wow zoomIn" data-wow-delay="0.9s">
                     <div
                         class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-4">
                         <h3 class="text-white mb-3">Make Appointment</h3>
                         <p class="text-white mb-3">We make it easy for you to make an appointment with HealthU</p>
->>>>>>> origin/faiha
                     </div>
                 </div>
             </div>
