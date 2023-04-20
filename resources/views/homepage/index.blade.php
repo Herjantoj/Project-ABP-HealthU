@@ -262,7 +262,7 @@
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light py-5 wow fadeInUp" data-wow-delay="0.3s" style="margin-top: -75px;">
-        <div class="row g-5 pt-4">
+        <div class="row g-5 pt-4 mb-3">
             <div class="col-lg-8 col-md-7">
                 <h3 class="text-white mb-4">Telkomedika Telkom University</h3>
                 <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>JL. TELEKOMUNIKASI NO. 1, TERUSAN BUAH
@@ -274,9 +274,9 @@
         <div>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                <button class="btn btn-primary w-50 py-3" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
                     <i class="fa fa-sign-out"></i>{{ __('Logout') }}
-                </a>
+                </button>
             </form>
         </div>
     </div>
