@@ -56,3 +56,5 @@ Route::middleware([
         }
     })->name('dashboard');
 });
+
+Route::post('/Appointment', [AppointmentController::class, 'Appointment'])->name('appointment.Appointment');
