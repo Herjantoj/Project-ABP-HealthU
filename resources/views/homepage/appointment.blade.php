@@ -59,7 +59,7 @@
         <div class="row gx-0">
             <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
-                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Opening Hours: Mon - Tues : 6.00 am - 10.00 pm, Sunday Closed </small>
+                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Opening Hours: Monday - Friday : 7.00 am - 7.00 pm, Saturday - Sunday : 8.00 am - 2.00 pm</small>
                 </div>
             </div>
             <div class="col-md-6 text-center text-lg-end">
@@ -68,7 +68,7 @@
                         <p class="m-0"><i class="fa fa-envelope-open me-2"></i>cs@telkomedika.co.id</p>
                     </div>
                     <div class="py-2">
-                        <p class="m-0"><i class="fa fa-phone-alt me-2"></i>1500115</p>
+                        <p class="m-0"><i class="fa fa-phone-alt me-2"></i>022-287310575</p>
                     </div>
                 </div>
             </div>
@@ -122,6 +122,7 @@
                                                 class="form-control bg-light border-0 datetimepicker-input"
                                                 placeholder="Appointment Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;" name="date">
                                         </div>
+
                                     </div>
                                     <div class="col-12 col-sm-6">
                                         <div class="time" id="time1" data-target-input="nearest">
@@ -134,6 +135,7 @@
                                         <button class="btn btn-dark w-100 py-3" type="submit">Make Appointment</button>
                                     </div>
                                 </div>
+
                             </form>
                         </div>
                     </div>
