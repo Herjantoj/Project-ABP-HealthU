@@ -25,10 +25,6 @@ Route::get('/Coba', function () {
     return view('dashboard.index');
 });
 
-Route::get('/dashboard-1', function () {
-    return view('dashboard');
-});
-
 Route::get('/login-1', function () {
     return view('auth.login');
 });
@@ -67,8 +63,6 @@ Route::post('/feedback', [FeedbackController::class, 'feedback'])->name('feedbac
 
 Route::get('/Registrasi', [AboutController::class, 'RegistrasiPage'])->name('regist');
 
-
-
 Route::get('/Login', [AboutController::class, 'LoginPage'])->name('homepage.login');
 
 Route::get('/Appointment', [AboutController::class, 'AppointmentPage'])->name('appointment');
@@ -80,7 +74,7 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        if (auth()->user()->role == 1) {
+        if (auth()->user()->role == 1 ||auth()->user()->role == 0) {
             return view('homepage.index');
         }
     })->name('dashboard');
