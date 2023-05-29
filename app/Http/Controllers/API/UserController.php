@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
+use App\Models\Dokter;
 use Illuminate\Support\Facades\Hash;
 use App\Helpers\ResponseFormatter;
 use App\Actions\Fortify\PasswordValidationRules;
@@ -117,6 +118,50 @@ class UserController extends Controller
                 'message' => 'Something went wrong',
                 'error' => $error
             ], 'Authentication Failed', 500);
+        }
+    }
+
+    public function createDokter(Request $request)
+    {
+        try {
+
+            $request->validate([
+                'nama' => 'required',
+                'spesialis' => 'required',
+                'no_telepon' => 'required',
+                'hari_praktik' => 'required',
+
+            ]);
+            $dokter = Dokter::create([
+                'nama' => $request->nama,
+                'spesialis' => $request->spesialis,
+                'no_telepon' => $request->no_telepon,
+                'hari_praktik' => $request->hari_praktik,
+
+            ]);
+            return response()->json([
+                'success' => true,
+                'message' => 'Daftar data Dokter success',
+            ], 200);
+        } catch (Exception $error) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Daftar data Dokter gagal',
+                'data' => $error,
+            ], 500);
+        }
+    }
+
+    public function getAllUser(Request $request)
+    {
+        try {
+            $user = User::all();
+            return ResponseFormatter::success($user, 'User found');
+        } catch (Exception $error) {
+            return ResponseFormatter::error([
+                'message' => 'Something went wrong',
+                'error' => $error
+            ], 'Internal Server Error', 500);
         }
     }
 

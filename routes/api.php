@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\Api\Tugas12Controller;
+
 
 
 /*
@@ -28,3 +30,6 @@ Route::middleware('auth:sanctum')->group(
         Route::get('getUser', [UserController::class, 'getUser']);
     }
 );
+Route::post('createDokter' ,[UserController::class, 'createDokter']);
+Route::get('getAllUser', [UserController::class, 'getAllUser']);
+Route::get('indexUser', [Tugas12Controller::class, 'indexUser']);
