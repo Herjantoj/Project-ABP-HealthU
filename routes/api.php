@@ -31,5 +31,6 @@ Route::middleware('auth:sanctum')->group(
     }
 );
 Route::post('createDokter' ,[UserController::class, 'createDokter']);
+Route::get('getDokter', [UserController::class, 'getDokter']);
 Route::get('getAllUser', [UserController::class, 'getAllUser']);
 Route::get('indexUser', [Tugas12Controller::class, 'indexUser']);

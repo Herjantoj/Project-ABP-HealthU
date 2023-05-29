@@ -165,4 +165,16 @@ class UserController extends Controller
         }
     }
 
+    public function getDokter(Request $request)
+    {
+        try {
+            $dokter = Dokter::all();
+            return ResponseFormatter::success($dokter, 'User found');
+        } catch (Exception $error) {
+            return ResponseFormatter::error([
+                'message' => 'Something went wrong',
+                'error' => $error
+            ], 'Internal Server Error', 500);
+        }
+    }
 }
